@@ -5,26 +5,32 @@ import movies from './assets/movies.json'
 
 
 const App = () => {
-  const listOfCategories = movies.map((category) => {
+  movies.map((elem) => {
     return (
-      <section>
-        <h2>{category.category}</h2>
+      <section key={elem.category}>
+        <h2>{elem.category}</h2>
+        {elem.images.map((image) => {
+          return (
+            <img key={image} src={image} alt="" />
+          )
+        }) }
       </section>
     )
   }) 
+
   // const listOfImages = movies.images.map((img) => {
   //   return (
-  //     <div className='images'>
+  //     <div>
   //       <img src={`${img.images}`} alt="" />
   //     </div>
   //   )
   // })
-  return (
-    <>
-      {listOfCategories}
-      {/* {listOfImages} */}
-    </>
-  )
+  // return (
+    // <>
+      // {listOfCategories}
+    //   {/* {listOfImages} */}
+    // </>
+  // )
 }
 
 export default App
