@@ -1,36 +1,23 @@
 
 import './App.css'
 import movies from './assets/movies.json'
-// import Section from './components/Section'
-
+import Section from './components/Section'
 
 const App = () => {
-  movies.map((elem) => {
+  return movies.map((elem) => {
     return (
-      <section key={elem.category}>
-        <h2>{elem.category}</h2>
-        {elem.images.map((image) => {
-          return (
-            <img key={image} src={image} alt="" />
-          )
-        }) }
-      </section>
+      <Section key = {elem.category} image = {image}/>
     )
   }) 
-
-  // const listOfImages = movies.images.map((img) => {
-  //   return (
-  //     <div>
-  //       <img src={`${img.images}`} alt="" />
-  //     </div>
-  //   )
-  // })
-  // return (
-    // <>
-      // {listOfCategories}
-    //   {/* {listOfImages} */}
-    // </>
-  // )
 }
+
+{/* <section key={elem.category}>
+  <h2>{elem.category}</h2>
+  {elem.images.map((image) => {
+    return (
+      <img key={image} src={image} alt="" />
+    )
+  }) }
+</section> */}
 
 export default App

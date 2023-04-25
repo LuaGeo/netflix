@@ -1,8 +1,12 @@
-const Section = ({ category, images}) => {
+const Section = (elem) => {
   return (
-    <section>
-      <h2>{category}</h2>
-      <div className="images">{images}</div>
+    <section key={elem.category}>
+      <h2>{elem.category}</h2>
+      {elem.images.map((image) => {
+        return (
+          <img key={image} src={image} alt="" />
+        )
+      }) }
     </section>
   )
 }
